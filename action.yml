@@ -12,13 +12,13 @@ inputs:
       specify exactly one of "subject-path", "subject-digest", or
       "subject-checksums". May contain a glob pattern or list of paths
       (total subject count cannot exceed 1024).
-    required: false
+    required: 
   subject-digest:
     description: >
       Digest of the subject for which provenance will be generated. Must be in
       the form "algorithm:hex_digest" (e.g. "sha256:abc123..."). Must specify
       exactly one of "subject-path", "subject-digest", or "subject-checksums".
-    required: false
+    required: true
   subject-name:
     description: >
       Subject name as it should appear in the attestation. Required when
@@ -28,7 +28,7 @@ inputs:
       Path to checksums file containing digest and name of subjects for
       attestation. Must specify exactly one of "subject-path", "subject-digest",
       or "subject-checksums".
-    required: false
+    required: true
   push-to-registry:
     description: >
       Whether to push the provenance statement to the image registry. Requires
